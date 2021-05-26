@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  RESTestTasks
-//
-//  Created by 1 on 5/26/21.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

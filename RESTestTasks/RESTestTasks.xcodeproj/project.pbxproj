@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		63179B4C265EE29A00596DB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63179B4B265EE29A00596DB7 /* AppDelegate.swift */; };
 		63179B4E265EE29A00596DB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63179B4D265EE29A00596DB7 /* SceneDelegate.swift */; };
-		63179B50265EE29A00596DB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63179B4F265EE29A00596DB7 /* ViewController.swift */; };
+		63179B50265EE29A00596DB7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63179B4F265EE29A00596DB7 /* MainViewController.swift */; };
 		63179B53265EE29A00596DB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63179B51265EE29A00596DB7 /* Main.storyboard */; };
 		63179B55265EE29B00596DB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63179B54265EE29B00596DB7 /* Assets.xcassets */; };
 		63179B58265EE29B00596DB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63179B56265EE29B00596DB7 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		63179B48265EE29A00596DB7 /* RESTestTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RESTestTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63179B4B265EE29A00596DB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63179B4D265EE29A00596DB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		63179B4F265EE29A00596DB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		63179B4F265EE29A00596DB7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		63179B52265EE29A00596DB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63179B54265EE29B00596DB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63179B57265EE29B00596DB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,15 +56,47 @@
 		63179B4A265EE29A00596DB7 /* RESTestTasks */ = {
 			isa = PBXGroup;
 			children = (
+				63179B61265EE48500596DB7 /* Model */,
+				63179B62265EE49200596DB7 /* UI */,
+				63179B63265EE49B00596DB7 /* Utils */,
 				63179B4B265EE29A00596DB7 /* AppDelegate.swift */,
 				63179B4D265EE29A00596DB7 /* SceneDelegate.swift */,
-				63179B4F265EE29A00596DB7 /* ViewController.swift */,
 				63179B51265EE29A00596DB7 /* Main.storyboard */,
 				63179B54265EE29B00596DB7 /* Assets.xcassets */,
 				63179B56265EE29B00596DB7 /* LaunchScreen.storyboard */,
 				63179B59265EE29B00596DB7 /* Info.plist */,
 			);
 			path = RESTestTasks;
+			sourceTree = "<group>";
+		};
+		63179B61265EE48500596DB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63179B62265EE49200596DB7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				63179B65265EE4EB00596DB7 /* Main */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		63179B63265EE49B00596DB7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		63179B65265EE4EB00596DB7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				63179B4F265EE29A00596DB7 /* MainViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63179B50265EE29A00596DB7 /* ViewController.swift in Sources */,
+				63179B50265EE29A00596DB7 /* MainViewController.swift in Sources */,
 				63179B4C265EE29A00596DB7 /* AppDelegate.swift in Sources */,
 				63179B4E265EE29A00596DB7 /* SceneDelegate.swift in Sources */,
 			);
