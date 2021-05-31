@@ -13,6 +13,8 @@
 		63179B53265EE29A00596DB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63179B51265EE29A00596DB7 /* Main.storyboard */; };
 		63179B55265EE29B00596DB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63179B54265EE29B00596DB7 /* Assets.xcassets */; };
 		63179B58265EE29B00596DB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63179B56265EE29B00596DB7 /* LaunchScreen.storyboard */; };
+		63B9D6E72664375B00CE59EA /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B9D6E62664375B00CE59EA /* MainTableViewCell.xib */; };
+		63B9D6EA2664377700CE59EA /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9D6E92664377700CE59EA /* MainTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		63179B54265EE29B00596DB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63179B57265EE29B00596DB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63179B59265EE29B00596DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63B9D6E62664375B00CE59EA /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		63B9D6E92664377700CE59EA /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				63179B4F265EE29A00596DB7 /* MainViewController.swift */,
+				63B9D6E92664377700CE59EA /* MainTableViewCell.swift */,
+				63B9D6E62664375B00CE59EA /* MainTableViewCell.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -158,6 +164,7 @@
 			files = (
 				63179B58265EE29B00596DB7 /* LaunchScreen.storyboard in Resources */,
 				63179B55265EE29B00596DB7 /* Assets.xcassets in Resources */,
+				63B9D6E72664375B00CE59EA /* MainTableViewCell.xib in Resources */,
 				63179B53265EE29A00596DB7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +178,7 @@
 			files = (
 				63179B50265EE29A00596DB7 /* MainViewController.swift in Sources */,
 				63179B4C265EE29A00596DB7 /* AppDelegate.swift in Sources */,
+				63B9D6EA2664377700CE59EA /* MainTableViewCell.swift in Sources */,
 				63179B4E265EE29A00596DB7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
