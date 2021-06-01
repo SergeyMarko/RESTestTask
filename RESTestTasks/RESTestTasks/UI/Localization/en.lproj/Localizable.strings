@@ -1,0 +1,5 @@
+"error.title" = "Error";
+"error.message.load" = "An error occurred while downloading data from the server, no data received.";
+"error.message.failedToConvert" = "Failed to convert floating point to integer.";
+
+"alert.cancel" = "Cancel";

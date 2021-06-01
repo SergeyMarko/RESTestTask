@@ -1,0 +1,15 @@
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "4jz-1m-Lcc"; */
+"4jz-1m-Lcc.title" = "Item";
+
+/* Class = "UILabel"; text = "Минский"; ObjectID = "6XY-X5-3uG"; */
+"6XY-X5-3uG.text" = "Минский";
+
+/* Class = "UILabel"; text = "11°"; ObjectID = "FAy-Sw-GpO"; */
+"FAy-Sw-GpO.text" = "11°";
+
+/* Class = "UILabel"; text = "Макс. 18°, мин. 11°"; ObjectID = "a6U-EP-y0X"; */
+"a6U-EP-y0X.text" = "Макс. 18°, мин. 11°";
+
+/* Class = "UILabel"; text = "Временами дождь"; ObjectID = "fWl-nv-YiC"; */
+"fWl-nv-YiC.text" = "Временами дождь";
