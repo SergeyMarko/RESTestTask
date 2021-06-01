@@ -21,6 +21,8 @@
 		63B9D70326661E1400CE59EA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63B9D70526661E1400CE59EA /* Localizable.strings */; };
 		63B9D70D2666258500CE59EA /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9D70C2666258500CE59EA /* UIViewController+Utils.swift */; };
 		63B9D7132666C39E00CE59EA /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9D7122666C39E00CE59EA /* Converter.swift */; };
+		63B9D7172666E45500CE59EA /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9D7152666E45500CE59EA /* DailyTableViewCell.swift */; };
+		63B9D7182666E45500CE59EA /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B9D7162666E45500CE59EA /* DailyTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		63B9D70726661E1600CE59EA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		63B9D70C2666258500CE59EA /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		63B9D7122666C39E00CE59EA /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		63B9D7152666E45500CE59EA /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
+		63B9D7162666E45500CE59EA /* DailyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 				63179B4F265EE29A00596DB7 /* MainViewController.swift */,
 				63B9D6E92664377700CE59EA /* MainTableViewCell.swift */,
 				63B9D6E62664375B00CE59EA /* MainTableViewCell.xib */,
+				63B9D7152666E45500CE59EA /* DailyTableViewCell.swift */,
+				63B9D7162666E45500CE59EA /* DailyTableViewCell.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -205,6 +211,7 @@
 				63179B55265EE29B00596DB7 /* Assets.xcassets in Resources */,
 				63B9D6E72664375B00CE59EA /* MainTableViewCell.xib in Resources */,
 				63179B53265EE29A00596DB7 /* Main.storyboard in Resources */,
+				63B9D7182666E45500CE59EA /* DailyTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63B9D70D2666258500CE59EA /* UIViewController+Utils.swift in Sources */,
+				63B9D7172666E45500CE59EA /* DailyTableViewCell.swift in Sources */,
 				63179B50265EE29A00596DB7 /* MainViewController.swift in Sources */,
 				63179B4C265EE29A00596DB7 /* AppDelegate.swift in Sources */,
 				63B9D6EE2664EB4800CE59EA /* NetworkManager.swift in Sources */,

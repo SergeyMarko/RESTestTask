@@ -25,6 +25,7 @@ struct Current: Decodable {
     var visibility: Int?
     var windSpeed: Double?
     var weather: [Weather]?
+    var pop: Double?
     
     enum CodingKeys: String, CodingKey {
         case time = "dt"

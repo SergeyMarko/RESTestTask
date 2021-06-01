@@ -54,10 +54,24 @@ class MainViewController: UIViewController {
         scrollView.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
+        //collectionView.dataSource = self
+        //collectionView.delegate = self
         
-        let nib = UINib(nibName: String(describing: MainTableViewCell.self), bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: MainTableViewCell.cellID)
+        let nib = UINib(nibName: String(describing: DailyTableViewCell.self), bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: DailyTableViewCell.cellId)
     }
+    
+    
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//
+//        let HEIGHT_VIEW = 128
+////            tableView.tableFooterView?.frame.size = CGSize(width: tableView.frame.width, height: CGFloat(HEIGHT_VIEW))
+//
+//            tableView.tableHeaderView?.frame.size = CGSize(width:tableView.frame.width, height: CGFloat(HEIGHT_VIEW))
+//
+//        tableView.tableHeaderView = collectionView
+//    }
     
     // MARK: - Private
     
@@ -80,25 +94,28 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITableViewDataSource {
     
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        1
+//    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        20
+        dailyWeather?.count ?? 0
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
-            let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.cellID, for: indexPath) as? MainTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: DailyTableViewCell.cellId, for: indexPath) as? DailyTableViewCell
         else {
-            fatalError("Can not find cell with id: \(MainTableViewCell.cellID) at indexPath: \(indexPath)")
+            fatalError("Can not find cell with id: \(DailyTableViewCell.cellId) at indexPath: \(indexPath)")
         }
         
-        cell.titleLabel.text = "Восход солнца"
-        cell.infoWetherLabel.text = "04:45"
+        if let day = dailyWeather?[indexPath.row] {
+            cell.update(with: day)
+        }
         
         return cell
     }
-    
-    
-    
 }
 
 
@@ -109,6 +126,28 @@ extension MainViewController: UITableViewDelegate {
     
     
 }
+
+
+// MARK: - UICollectionViewDataSource
+
+//extension MainViewController: UICollectionViewDataSource {
+//
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        hourlyWeather?.count ?? 0
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        <#code#>
+//    }
+//}
+
+
+// MARK: - UICollectionViewDelegate
+
+//extension MainViewController: UICollectionViewDelegate {
+//    
+//    
+//}
 
 // MARK: - UIScrollViewDelegate
 
@@ -138,8 +177,9 @@ extension MainViewController: CLLocationManagerDelegate {
                 self.currentWeather = weatherInfo.current
                 self.hourlyWeather = weatherInfo.hourly
                 self.dailyWeather = weatherInfo.daily
-                self.locationLabel.text = weatherInfo.timezone
+                self.locationLabel.text = weatherInfo.timezone?.components(separatedBy: "/").last
                 self.updateUI()
+                self.tableView.reloadData()
             case .failure(let error):
                 self.showErrorAlert(message: error.localizedDescription)
             }
