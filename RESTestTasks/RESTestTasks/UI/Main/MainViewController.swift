@@ -29,6 +29,13 @@ class MainViewController: UIViewController {
     
     private var userLocationCoordinate: CLLocationCoordinate2D?
     
+    private let networkManager = NetworkManager()
+    
+    private var currentWeather: Current?
+    
+    private var hourlyWeather: [Current]?
+    
+    private var dailyWeather: [Daily]?
     
     // MARK: - Lifecycle
     
@@ -50,12 +57,22 @@ class MainViewController: UIViewController {
         
         let nib = UINib(nibName: String(describing: MainTableViewCell.self), bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: MainTableViewCell.cellID)
-        
-        
-        
-        
     }
-
+    
+    // MARK: - Private
+    
+    private func updateUI() {
+        guard
+            let max = dailyWeather?.first?.temperature?.max,
+            let min = dailyWeather?.first?.temperature?.min,
+            let currentTemp = currentWeather?.temperature,
+            let wetherDescription = currentWeather?.weather?.first?.description
+        else { return }
+        
+        self.wetherDescription.text = wetherDescription
+        airTemperature.text = String(Int(currentTemp))
+        maxMinTemperatureToday.text = "Макс. \(Int(max)), мин. \(Int(min))"
+    }
 
 }
 
@@ -97,27 +114,6 @@ extension MainViewController: UITableViewDelegate {
 
 extension MainViewController: UIScrollViewDelegate {
     
-    
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let offset = scrollView.contentOffset.y
-//        let finishY = locationStackView.frame.origin.y + locationStackView.frame.size.height
-//
-//        var newCollectionFrame = CGRect()
-//
-//        if offset < finishY {
-//            print(UIScreen.main.bounds.size.height)
-//            print(finishY)
-//            print(offset)
-//            let newMaskHeight = UIScreen.main.bounds.size.height - finishY + offset
-//            print("--> \(newMaskHeight)")
-//            let newMaskStartingY = collectionView.frame.origin.y
-//            newCollectionFrame = CGRect(x: 0, y: newMaskStartingY, width: UIScreen().bounds.size.width, height: newMaskHeight)
-//
-//        }
-//        
-//        collectionView.frame = newCollectionFrame
-//    }
-    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
 
         let contentOffset = locationStackView.frame.size.height + locationStackViewConstraintTop.constant
@@ -134,7 +130,19 @@ extension MainViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         
-        userLocationCoordinate?.longitude = locValue.longitude
-        userLocationCoordinate?.latitude = locValue.latitude
+        networkManager.loadWeatherData(by: locValue) { [weak self] resalt in
+            guard let self = self else { return }
+            
+            switch resalt {
+            case .success(let weatherInfo):
+                self.currentWeather = weatherInfo.current
+                self.hourlyWeather = weatherInfo.hourly
+                self.dailyWeather = weatherInfo.daily
+                self.locationLabel.text = weatherInfo.timezone
+                self.updateUI()
+            case .failure(let error):
+                self.showErrorAlert(message: error.localizedDescription)
+            }
+        }
     }
 }

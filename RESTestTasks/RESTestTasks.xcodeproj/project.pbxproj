@@ -15,6 +15,12 @@
 		63179B58265EE29B00596DB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63179B56265EE29B00596DB7 /* LaunchScreen.storyboard */; };
 		63B9D6E72664375B00CE59EA /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B9D6E62664375B00CE59EA /* MainTableViewCell.xib */; };
 		63B9D6EA2664377700CE59EA /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9D6E92664377700CE59EA /* MainTableViewCell.swift */; };
+		63B9D6EE2664EB4800CE59EA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9D6ED2664EB4800CE59EA /* NetworkManager.swift */; };
+		63B9D6F5266545CE00CE59EA /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9D6F4266545CE00CE59EA /* WeatherInfo.swift */; };
+		63B9D6F826661B7800CE59EA /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9D6F726661B7800CE59EA /* Localization.swift */; };
+		63B9D70326661E1400CE59EA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63B9D70526661E1400CE59EA /* Localizable.strings */; };
+		63B9D70D2666258500CE59EA /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9D70C2666258500CE59EA /* UIViewController+Utils.swift */; };
+		63B9D7132666C39E00CE59EA /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9D7122666C39E00CE59EA /* Converter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,15 @@
 		63179B59265EE29B00596DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63B9D6E62664375B00CE59EA /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		63B9D6E92664377700CE59EA /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		63B9D6ED2664EB4800CE59EA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		63B9D6F4266545CE00CE59EA /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
+		63B9D6F726661B7800CE59EA /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		63B9D6FB26661DA800CE59EA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		63B9D6FC26661DA800CE59EA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		63B9D70426661E1400CE59EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		63B9D70726661E1600CE59EA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		63B9D70C2666258500CE59EA /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
+		63B9D7122666C39E00CE59EA /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +77,7 @@
 			children = (
 				63179B61265EE48500596DB7 /* Model */,
 				63179B62265EE49200596DB7 /* UI */,
+				63B9D70926661F1300CE59EA /* Networking */,
 				63179B63265EE49B00596DB7 /* Utils */,
 				63179B4B265EE29A00596DB7 /* AppDelegate.swift */,
 				63179B4D265EE29A00596DB7 /* SceneDelegate.swift */,
@@ -76,6 +92,7 @@
 		63179B61265EE48500596DB7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				63B9D6F4266545CE00CE59EA /* WeatherInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -84,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				63179B65265EE4EB00596DB7 /* Main */,
+				63B9D6FE26661DCD00CE59EA /* Localization */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -91,6 +109,9 @@
 		63179B63265EE49B00596DB7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				63B9D6F726661B7800CE59EA /* Localization.swift */,
+				63B9D70C2666258500CE59EA /* UIViewController+Utils.swift */,
+				63B9D7122666C39E00CE59EA /* Converter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -103,6 +124,22 @@
 				63B9D6E62664375B00CE59EA /* MainTableViewCell.xib */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		63B9D6FE26661DCD00CE59EA /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				63B9D70526661E1400CE59EA /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		63B9D70926661F1300CE59EA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				63B9D6ED2664EB4800CE59EA /* NetworkManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +183,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 63179B3F265EE29A00596DB7;
 			productRefGroup = 63179B49265EE29A00596DB7 /* Products */;
@@ -162,6 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B9D70326661E1400CE59EA /* Localizable.strings in Resources */,
 				63179B58265EE29B00596DB7 /* LaunchScreen.storyboard in Resources */,
 				63179B55265EE29B00596DB7 /* Assets.xcassets in Resources */,
 				63B9D6E72664375B00CE59EA /* MainTableViewCell.xib in Resources */,
@@ -176,9 +215,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B9D70D2666258500CE59EA /* UIViewController+Utils.swift in Sources */,
 				63179B50265EE29A00596DB7 /* MainViewController.swift in Sources */,
 				63179B4C265EE29A00596DB7 /* AppDelegate.swift in Sources */,
+				63B9D6EE2664EB4800CE59EA /* NetworkManager.swift in Sources */,
+				63B9D7132666C39E00CE59EA /* Converter.swift in Sources */,
+				63B9D6F826661B7800CE59EA /* Localization.swift in Sources */,
 				63B9D6EA2664377700CE59EA /* MainTableViewCell.swift in Sources */,
+				63B9D6F5266545CE00CE59EA /* WeatherInfo.swift in Sources */,
 				63179B4E265EE29A00596DB7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,6 +234,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				63179B52265EE29A00596DB7 /* Base */,
+				63B9D6FB26661DA800CE59EA /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -198,8 +243,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				63179B57265EE29B00596DB7 /* Base */,
+				63B9D6FC26661DA800CE59EA /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		63B9D70526661E1400CE59EA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63B9D70426661E1400CE59EA /* en */,
+				63B9D70726661E1600CE59EA /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -209,6 +264,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -270,6 +326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
