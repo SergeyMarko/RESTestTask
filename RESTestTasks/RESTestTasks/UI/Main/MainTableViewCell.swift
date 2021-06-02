@@ -2,7 +2,7 @@ import UIKit
 
 class MainTableViewCell: UITableViewCell {
 
-    static let cellID = "mainCell"
+    static let cellId = "mainCell"
 
     @IBOutlet weak var titleLabel: UILabel!
     
