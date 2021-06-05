@@ -7,53 +7,61 @@ enum DataError: Error {
 
 class NetworkManager {
     
-    private let baseURL = "https://api.openweathermap.org/data/2.5/onecall?"
+    private struct Constant {
+        static let baseURL = "https://api.openweathermap.org/data/2.5/onecall?"
+        static let exclude = "minutely,alerts"
+        static let units = "metric"
+        static let lang = "ru"
+        static let apiKey = "07d32864d74dc24e0aeef218f7874880"
+    }
     
-    private let exclude = "minutely,alerts"
-    
-    private let units = "metric"
-    
-    private let lang = "ru"
-    
-    private let apiKey = "aa40652bec44b833a29a637499750e47"
-    
-    private let apiKey2 = "07d32864d74dc24e0aeef218f7874880"
-    
-    private var allUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=53.89&lon=27.56&lang=ru&units=metric&exclude=minutely,alerts&appid=07d32864d74dc24e0aeef218f7874880"
+
     
     func loadWeatherData(by location: CLLocationCoordinate2D, completionHandler: @escaping ((Result<WeatherInfo, Error>) -> Void) ) -> Void {
         
-        guard
-            let url = URL(string: "\(baseURL)lat=\(location.latitude)&lon=\(location.longitude)&lang=\(lang)&units=\(units)&exclude=\(exclude)&appid=\(apiKey2)")
-        else { return }
+        guard let url = buildURL(for: location) else { return }
         
         let urlSession = URLSession(configuration: .default)
         
-        let newDataTask = urlSession.dataTask(with: url) { (data, response, error) in
+        let newDataTask = urlSession.dataTask(with: url) { (data, _, error) in
             
-            func fireCompletion(_ resultInfo: Result<WeatherInfo, Error>) {
-                DispatchQueue.main.async {
-                    completionHandler(resultInfo)
+            guard
+                let data = data,
+                error == nil
+            else {
+                self.dispatchAsyncSafelyToMainQueue {
+                    completionHandler(.failure(error ?? DataError.loading()))
                 }
-            }
-            
-            if let error = error {
-                fireCompletion(.failure(error))
-            }
-            
-            guard let data = data else {
-                let dataLoadingError = DataError.loading()
-                fireCompletion(.failure(dataLoadingError))
                 return
             }
             
             do {
                 let resultInfo = try JSONDecoder().decode(WeatherInfo.self, from: data)
-                fireCompletion(.success(resultInfo))
+                self.dispatchAsyncSafelyToMainQueue {
+                    completionHandler(.success(resultInfo))
+                }
             } catch let parsingError {
-                fireCompletion(.failure(parsingError))
+                self.dispatchAsyncSafelyToMainQueue {
+                    completionHandler(.failure(parsingError))
+                }
             }
         }
         newDataTask.resume()
+    }
+    
+    
+    private func buildURL(for location: CLLocationCoordinate2D) -> URL? {
+        URL(string: "\(Constant.baseURL)lat=\(location.latitude)&lon=\(location.longitude)&lang=\(Constant.lang)&units=\(Constant.units)&exclude=\(Constant.exclude)&appid=\(Constant.apiKey)")
+    }
+    
+    
+    private func dispatchAsyncSafelyToMainQueue(_ block: @escaping () -> Void) {
+        if Thread.isMainThread {
+            block()
+        } else {
+            DispatchQueue.main.async {
+                block()
+            }
+        }
     }
 }
