@@ -72,3 +72,21 @@ struct Temp: Decodable {
         case day, min, max, night
     }
 }
+
+extension Current {
+    
+    var urlIcon: URL? {
+        URL(string: "https://openweathermap.org/img/wn/\(weather?.first?.icon ?? "")@2x.png")
+    }
+    
+    var sunsetDescription: String {
+        "Заход Солнца"
+    }
+}
+
+extension Daily {
+    
+    var urlIcon: URL? {
+        URL(string: "https://openweathermap.org/img/wn/\(weather?.first?.icon ?? "")@2x.png")
+    }
+}

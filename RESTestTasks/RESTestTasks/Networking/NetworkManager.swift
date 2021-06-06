@@ -29,7 +29,7 @@ class NetworkManager {
                 let data = data,
                 error == nil
             else {
-                self.dispatchAsyncSafelyToMainQueue {
+                dispatchAsyncSafelyToMainQueue {
                     completionHandler(.failure(error ?? DataError.loading()))
                 }
                 return
@@ -37,11 +37,11 @@ class NetworkManager {
             
             do {
                 let resultInfo = try JSONDecoder().decode(WeatherInfo.self, from: data)
-                self.dispatchAsyncSafelyToMainQueue {
+                dispatchAsyncSafelyToMainQueue {
                     completionHandler(.success(resultInfo))
                 }
             } catch let parsingError {
-                self.dispatchAsyncSafelyToMainQueue {
+                dispatchAsyncSafelyToMainQueue {
                     completionHandler(.failure(parsingError))
                 }
             }
@@ -52,16 +52,5 @@ class NetworkManager {
     
     private func buildURL(for location: CLLocationCoordinate2D) -> URL? {
         URL(string: "\(Constant.baseURL)lat=\(location.latitude)&lon=\(location.longitude)&lang=\(Constant.lang)&units=\(Constant.units)&exclude=\(Constant.exclude)&appid=\(Constant.apiKey)")
-    }
-    
-    
-    private func dispatchAsyncSafelyToMainQueue(_ block: @escaping () -> Void) {
-        if Thread.isMainThread {
-            block()
-        } else {
-            DispatchQueue.main.async {
-                block()
-            }
-        }
     }
 }
