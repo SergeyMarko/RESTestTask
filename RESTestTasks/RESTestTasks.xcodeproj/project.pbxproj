@@ -23,6 +23,9 @@
 		63B9D7132666C39E00CE59EA /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9D7122666C39E00CE59EA /* Converter.swift */; };
 		63B9D7172666E45500CE59EA /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9D7152666E45500CE59EA /* DailyTableViewCell.swift */; };
 		63B9D7182666E45500CE59EA /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B9D7162666E45500CE59EA /* DailyTableViewCell.xib */; };
+		63B9D722266C0AEA00CE59EA /* HourlyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9D720266C0AEA00CE59EA /* HourlyCollectionViewCell.swift */; };
+		63B9D723266C0AEA00CE59EA /* HourlyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63B9D721266C0AEA00CE59EA /* HourlyCollectionViewCell.xib */; };
+		63B9D727266D19F400CE59EA /* DispatchAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9D726266D19F400CE59EA /* DispatchAsync.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		63B9D7122666C39E00CE59EA /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		63B9D7152666E45500CE59EA /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
 		63B9D7162666E45500CE59EA /* DailyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyTableViewCell.xib; sourceTree = "<group>"; };
+		63B9D720266C0AEA00CE59EA /* HourlyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCollectionViewCell.swift; sourceTree = "<group>"; };
+		63B9D721266C0AEA00CE59EA /* HourlyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyCollectionViewCell.xib; sourceTree = "<group>"; };
+		63B9D726266D19F400CE59EA /* DispatchAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchAsync.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,7 @@
 				63B9D6F726661B7800CE59EA /* Localization.swift */,
 				63B9D70C2666258500CE59EA /* UIViewController+Utils.swift */,
 				63B9D7122666C39E00CE59EA /* Converter.swift */,
+				63B9D726266D19F400CE59EA /* DispatchAsync.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -123,11 +130,8 @@
 		63179B65265EE4EB00596DB7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				63179B4F265EE29A00596DB7 /* MainViewController.swift */,
-				63B9D6E92664377700CE59EA /* MainTableViewCell.swift */,
-				63B9D6E62664375B00CE59EA /* MainTableViewCell.xib */,
-				63B9D7152666E45500CE59EA /* DailyTableViewCell.swift */,
-				63B9D7162666E45500CE59EA /* DailyTableViewCell.xib */,
+				63B9D71E266C09F600CE59EA /* Controller */,
+				63B9D71F266C0A1400CE59EA /* Cell */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -146,6 +150,27 @@
 				63B9D6ED2664EB4800CE59EA /* NetworkManager.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		63B9D71E266C09F600CE59EA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				63179B4F265EE29A00596DB7 /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		63B9D71F266C0A1400CE59EA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				63B9D6E92664377700CE59EA /* MainTableViewCell.swift */,
+				63B9D6E62664375B00CE59EA /* MainTableViewCell.xib */,
+				63B9D7152666E45500CE59EA /* DailyTableViewCell.swift */,
+				63B9D7162666E45500CE59EA /* DailyTableViewCell.xib */,
+				63B9D720266C0AEA00CE59EA /* HourlyCollectionViewCell.swift */,
+				63B9D721266C0AEA00CE59EA /* HourlyCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +235,7 @@
 				63179B58265EE29B00596DB7 /* LaunchScreen.storyboard in Resources */,
 				63179B55265EE29B00596DB7 /* Assets.xcassets in Resources */,
 				63B9D6E72664375B00CE59EA /* MainTableViewCell.xib in Resources */,
+				63B9D723266C0AEA00CE59EA /* HourlyCollectionViewCell.xib in Resources */,
 				63179B53265EE29A00596DB7 /* Main.storyboard in Resources */,
 				63B9D7182666E45500CE59EA /* DailyTableViewCell.xib in Resources */,
 			);
@@ -224,7 +250,9 @@
 			files = (
 				63B9D70D2666258500CE59EA /* UIViewController+Utils.swift in Sources */,
 				63B9D7172666E45500CE59EA /* DailyTableViewCell.swift in Sources */,
+				63B9D722266C0AEA00CE59EA /* HourlyCollectionViewCell.swift in Sources */,
 				63179B50265EE29A00596DB7 /* MainViewController.swift in Sources */,
+				63B9D727266D19F400CE59EA /* DispatchAsync.swift in Sources */,
 				63179B4C265EE29A00596DB7 /* AppDelegate.swift in Sources */,
 				63B9D6EE2664EB4800CE59EA /* NetworkManager.swift in Sources */,
 				63B9D7132666C39E00CE59EA /* Converter.swift in Sources */,

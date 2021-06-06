@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -58,33 +57,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDp-Kr-LfR" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="988"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
-                                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fs5-RC-YiS">
-                                                <rect key="frame" x="0.0" y="260" width="414" height="128"/>
-                                                <color key="backgroundColor" cyan="0.0" magenta="0.36240297430000001" yellow="0.18529217540000001" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="128" id="GAe-X3-9dl"/>
-                                                </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="o3E-W7-ZmK">
-                                                    <size key="itemSize" width="128" height="128"/>
-                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                </collectionViewFlowLayout>
-                                                <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gZs-LQ-MQT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ptr-jf-NH7">
-                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                        </collectionViewCellContentView>
-                                                    </collectionViewCell>
-                                                </cells>
-                                            </collectionView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5s6-Ji-ItJ">
-                                                <rect key="frame" x="0.0" y="388" width="414" height="600"/>
+                                                <rect key="frame" x="0.0" y="296" width="414" height="600"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="600" id="bMw-6O-tFJ"/>
@@ -93,13 +69,9 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="fs5-RC-YiS" firstAttribute="top" secondItem="aDp-Kr-LfR" secondAttribute="top" constant="260" id="1NI-c0-2C7"/>
                                             <constraint firstAttribute="trailing" secondItem="5s6-Ji-ItJ" secondAttribute="trailing" id="1kr-28-LAL"/>
                                             <constraint firstItem="5s6-Ji-ItJ" firstAttribute="leading" secondItem="aDp-Kr-LfR" secondAttribute="leading" id="Hjb-eM-Sb5"/>
-                                            <constraint firstItem="5s6-Ji-ItJ" firstAttribute="top" secondItem="fs5-RC-YiS" secondAttribute="bottom" id="Krp-Tl-H2M"/>
-                                            <constraint firstAttribute="trailing" secondItem="fs5-RC-YiS" secondAttribute="trailing" id="O7q-7E-Law"/>
                                             <constraint firstAttribute="bottom" secondItem="5s6-Ji-ItJ" secondAttribute="bottom" id="k9S-fs-kMo"/>
-                                            <constraint firstItem="fs5-RC-YiS" firstAttribute="leading" secondItem="aDp-Kr-LfR" secondAttribute="leading" id="kND-zg-eyB"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -146,7 +118,6 @@
                     <navigationItem key="navigationItem" id="MU2-1x-Ehr"/>
                     <connections>
                         <outlet property="airTemperature" destination="FAy-Sw-GpO" id="8J5-Cb-1NR"/>
-                        <outlet property="collectionView" destination="fs5-RC-YiS" id="gqC-Zc-8FW"/>
                         <outlet property="locationLabel" destination="6XY-X5-3uG" id="LNu-Qc-ImG"/>
                         <outlet property="locationStackView" destination="23T-Ja-vhU" id="7SV-Ne-hlz"/>
                         <outlet property="locationStackViewConstraintTop" destination="IXJ-vT-YWA" id="5dY-g1-p4U"/>
